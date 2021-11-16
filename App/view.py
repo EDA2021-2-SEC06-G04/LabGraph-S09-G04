@@ -31,6 +31,7 @@ import threading
 from App import controller
 from DISClib.ADT import stack
 assert config
+import time
 
 """
 La vista se encarga de la interacción con el usuario.
@@ -44,7 +45,7 @@ operación seleccionada.
 # ___________________________________________________
 
 
-servicefile = 'bus_routes_14000.csv'
+servicefile = 'bus_routes_150.csv'
 initialStation = None
 
 # ___________________________________________________
@@ -78,13 +79,17 @@ def optionTwo(cont):
 
 
 def optionThree(cont):
+
     print('El número de componentes conectados es: ' +
           str(controller.connectedComponents(cont)))
 
 
 def optionFour(cont, initialStation):
+    start_time = time.process_time()
     controller.minimumCostPaths(cont, initialStation)
-
+    stop_time = time.process_time()
+    elapsed_time_mseg = (stop_time - start_time)*1000
+    print('El programa se demoró '+ str(elapsed_time_mseg) + ' en ordenar los datos de muestra por medio de Merge sort.')
 
 def optionFive(cont, destStation):
     haspath = controller.hasPath(cont, destStation)

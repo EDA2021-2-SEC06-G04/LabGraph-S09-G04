@@ -1,1 +1,1 @@
-# ISIS1225-SampleGraph
+Integrantes: Pablo Pedreros - 2021124911 - p.pedreros@uniandes.edu.co
