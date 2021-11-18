@@ -45,7 +45,7 @@ operación seleccionada.
 # ___________________________________________________
 
 
-servicefile = 'bus_routes_150.csv'
+servicefile = 'bus_routes_14000.csv'
 initialStation = None
 
 # ___________________________________________________
@@ -148,7 +148,12 @@ def thread_cycle():
 
         elif int(inputs[0]) == 6:
             destStation = input("Estación destino (Ej: 15151-10): ")
+            start_time = time.process_time()
             optionSix(cont, destStation)
+            stop_time = time.process_time()
+            elapsed_time_mseg = (stop_time - start_time)*1000
+            print('El programa se demoró '+ str(elapsed_time_mseg) + ' en ordenar los datos de muestra por medio de Merge sort.')
+
 
         elif int(inputs[0]) == 7:
             optionSeven(cont)
